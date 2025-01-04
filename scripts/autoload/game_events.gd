@@ -8,15 +8,17 @@ extends Node
 signal variable_saved(section: String, key: String, value: Variant)
 signal party_ready()
 signal spectate_mode_changed()
+signal sequence_started(name: String)
 
 
 func emit_variable_saved(section: String, key: String, value: Variant) -> void:
 	variable_saved.emit(section, key, value)
 
-
 func emit_party_ready() -> void:
 	party_ready.emit()
 
-
 func emit_spectate_mode_changed() -> void:
 	spectate_mode_changed.emit()
+
+func emit_sequence_started(name: String) -> void:
+	sequence_started.emit(name)

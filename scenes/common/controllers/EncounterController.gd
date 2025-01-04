@@ -16,6 +16,7 @@ func start_encounter(party: Dictionary) -> void:
 	#var selected_sequence := Global.selected_sequence_index
 	var selected_sequence := 0
 	print("Starting sequence: ", sequences[selected_sequence])
+	GameEvents.emit_sequence_started(sequences[selected_sequence].name)
 	#if chain_sequences:
 		#sequences[selected_sequence].start_sequence(party).connect(play_next_sequence)
 	sequences[selected_sequence].start_sequence(party)
