@@ -7,15 +7,9 @@ extends AudioStreamPlayer
 var initial_volume_linear: float
 
 func _ready() -> void:
-	GameEvents.sequence_started.connect(on_sequence_started)
 	initial_volume_linear = db_to_linear(initial_volume_db)
 	play(start_time_sec)
 	fade_in()
-
-func on_sequence_started(name: String) -> void:
-	pass
-	#play(start_time_sec)
-	#fade_in()
 
 func fade_in() -> void:
 	var elapsed_time: float = 0
